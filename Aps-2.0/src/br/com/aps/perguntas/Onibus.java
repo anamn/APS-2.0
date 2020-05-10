@@ -1,24 +1,21 @@
 package br.com.aps.perguntas;
+
 public class Onibus implements Question {
 
 	@Override
 	public void question() {
 		System.out.println("Quer ir de transporte público?");
-		
+
 	}
 
 	@Override
-	public void sim() {
-		System.out.println("Você escolheu ir de transporte público");
-		System.out.println("Você pegou um ônibus até a sua faculdade");
-		
+	public String resposta(int choice) {
+		if (choice == 1) {
+			return "Você escolheu ir de transporte público \\n  Você pegou um ônibus até a sua faculdade";
+		} else if (choice == 2) {
+			return "Você vai a pé até sua faculdade";
+		}
+		throw new RespostaInvalida("Resposta Invalida");
 	}
-
-	@Override
-	public void nao() {
-		System.out.println("Você vai a pé até sua faculdade");
-		
-	}
-
 
 }

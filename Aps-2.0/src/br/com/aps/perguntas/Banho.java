@@ -1,6 +1,7 @@
 package br.com.aps.perguntas;
 public class Banho implements Question {
 	private int times = 0;
+	private int quantidadeDeBanhos = 0;
 	
 	@Override
 	public void question() {
@@ -14,15 +15,23 @@ public class Banho implements Question {
 	}
 
 	@Override
-	public void sim() {
-		System.out.println("Você tomou banho");
-		times++;
+	public String resposta(int choice) {
+		if (choice == 1) {
+			times++;
+			setQuantidadeDeBanhos(getQuantidadeDeBanhos() + 1);
+			return "Você tomou banho";
+		} else if (choice == 2) {
+			return "Você não tomou banho";
+		}
+		throw new RespostaInvalida("Resposta Invalida");
 	}
 
-	@Override
-	public void nao() {
-		System.out.println("Você não tomou banho");
-		
+	public int getQuantidadeDeBanhos() {
+		return quantidadeDeBanhos;
+	}
+
+	public void setQuantidadeDeBanhos(int quantidadeDeBanhos) {
+		this.quantidadeDeBanhos = quantidadeDeBanhos;
 	}
 
 
