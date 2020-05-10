@@ -3,7 +3,7 @@ package br.com.aps.perguntas;
 import br.com.aps.dia.Day;
 
 public class Trabalho implements Question {
-	
+
 	Carro carro = new Carro();
 
 	@Override
@@ -11,7 +11,8 @@ public class Trabalho implements Question {
 		System.out.println("Você precisa ir para o trabalho!");
 		if (Carro.times == 0) {
 			System.out.println("Ir para o trabalho de transporte público?");
-		} else if (Carro.times == 1) {
+		}
+		if (Carro.times != 1) {
 			System.out.println("Quer ir com seu carro? ");
 
 		}

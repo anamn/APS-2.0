@@ -18,7 +18,7 @@ public class Carro implements Question {
 	@Override
 	public String resposta(int choice) {
 		if (choice == 1) {
-			times++;
+			times= times+1;
 			Day.pontosPontos("carro");
 			return "Você vai de carro então!";
 		} else if (choice == 2) {
